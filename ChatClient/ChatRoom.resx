@@ -1,0 +1,291 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txt_Message.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>20, 60</value>
+  </data>
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+  <data name="txt_Message.Multiline" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="txt_Message.PlaceholderText" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="txt_Message.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>250, 220</value>
+  </data>
+  <data name="txt_Message.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txt_Message.Name" xml:space="preserve">
+    <value>txt_Message</value>
+  </data>
+  <data name="&gt;&gt;txt_Message.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Message.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_Message.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl_AddToVIP.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <data name="lbl_AddToVIP.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 10.2pt</value>
+  </data>
+  <data name="lbl_AddToVIP.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>17, 20</value>
+  </data>
+  <data name="lbl_AddToVIP.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>173, 23</value>
+  </data>
+  <data name="lbl_AddToVIP.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>2</value>
+  </data>
+  <data name="lbl_AddToVIP.Text" xml:space="preserve">
+    <value>Add me to VIP group</value>
+  </data>
+  <data name="&gt;&gt;lbl_AddToVIP.Name" xml:space="preserve">
+    <value>lbl_AddToVIP</value>
+  </data>
+  <data name="&gt;&gt;lbl_AddToVIP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_AddToVIP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_AddToVIP.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cb_AddToVIP.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="cb_AddToVIP.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>250, 25</value>
+  </data>
+  <data name="cb_AddToVIP.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>18, 17</value>
+  </data>
+  <data name="cb_AddToVIP.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cb_AddToVIP.Name" xml:space="preserve">
+    <value>cb_AddToVIP</value>
+  </data>
+  <data name="&gt;&gt;cb_AddToVIP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_AddToVIP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_AddToVIP.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btn_SendMessage.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>20, 300</value>
+  </data>
+  <data name="btn_SendMessage.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>250, 35</value>
+  </data>
+  <data name="btn_SendMessage.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>4</value>
+  </data>
+  <data name="btn_SendMessage.Text" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="&gt;&gt;btn_SendMessage.Name" xml:space="preserve">
+    <value>btn_SendMessage</value>
+  </data>
+  <data name="&gt;&gt;btn_SendMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_SendMessage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_SendMessage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_Connect.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>20, 350</value>
+  </data>
+  <data name="btn_Connect.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>100, 35</value>
+  </data>
+  <data name="btn_Connect.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>5</value>
+  </data>
+  <data name="btn_Connect.Text" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="&gt;&gt;btn_Connect.Name" xml:space="preserve">
+    <value>btn_Connect</value>
+  </data>
+  <data name="&gt;&gt;btn_Connect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Connect.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Connect.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_Disconnect.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>170, 350</value>
+  </data>
+  <data name="btn_Disconnect.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>100, 35</value>
+  </data>
+  <data name="btn_Disconnect.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>6</value>
+  </data>
+  <data name="btn_Disconnect.Text" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="&gt;&gt;btn_Disconnect.Name" xml:space="preserve">
+    <value>btn_Disconnect</value>
+  </data>
+  <data name="&gt;&gt;btn_Disconnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Disconnect.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Disconnect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_Events.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Events.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI Semibold, 10.2pt, style=Bold, Italic</value>
+  </data>
+  <data name="lbl_Events.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>340, 360</value>
+  </data>
+  <data name="lbl_Events.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>158, 23</value>
+  </data>
+  <data name="lbl_Events.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>7</value>
+  </data>
+  <data name="lbl_Events.Text" xml:space="preserve">
+    <value>Waiting for event...</value>
+  </data>
+  <data name="&gt;&gt;lbl_Events.Name" xml:space="preserve">
+    <value>lbl_Events</value>
+  </data>
+  <data name="&gt;&gt;lbl_Events.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Events.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Events.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_Messages.AutoSize" type="System.Boolean, System.Private.CoreLib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Messages.Font" type="System.Drawing.Font, System.Drawing.Common">
+    <value>Segoe UI, 10.2pt</value>
+  </data>
+  <data name="lbl_Messages.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>340, 20</value>
+  </data>
+  <data name="lbl_Messages.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>144, 23</value>
+  </data>
+  <data name="lbl_Messages.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>8</value>
+  </data>
+  <data name="lbl_Messages.Text" xml:space="preserve">
+    <value>No messages yet!</value>
+  </data>
+  <data name="&gt;&gt;lbl_Messages.Name" xml:space="preserve">
+    <value>lbl_Messages</value>
+  </data>
+  <data name="&gt;&gt;lbl_Messages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Messages.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Messages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing.Primitives">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>750, 400</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ChatRoom</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
