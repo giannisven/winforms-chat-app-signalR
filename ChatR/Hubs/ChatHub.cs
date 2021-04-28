@@ -11,13 +11,13 @@ namespace ChatR.Hubs
         public override Task OnConnectedAsync()
         {
             Helpers.ClientHandler.ConnectedClients++;
-            Clients.Others.ClientJoined(Helpers.ClientHandler.ConnectedClients);
+            Clients.All.UpdateActiveClients(Helpers.ClientHandler.ConnectedClients);
             return base.OnConnectedAsync();
         }
         public override Task OnDisconnectedAsync(Exception exception)
         {
             Helpers.ClientHandler.ConnectedClients--;
-            Clients.Others.ClientLeft(Helpers.ClientHandler.ConnectedClients);
+            Clients.All.UpdateActiveClients(Helpers.ClientHandler.ConnectedClients);
             return base.OnDisconnectedAsync(exception);
         }
 
@@ -35,12 +35,12 @@ namespace ChatR.Hubs
         public async void AddToVIPGroup(string client)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, Helpers.ClientHandler.VIP_GROUP);
-            await Clients.Others.AddedToVIPGroup(client);
+            await Clients.OthersInGroup(Helpers.ClientHandler.VIP_GROUP).AddedToVIPGroup(client);
         }
         public async void RemoveFromVIPGroup(string client)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, Helpers.ClientHandler.VIP_GROUP);
-            await Clients.Others.RemovedFromVIPGroup(client);
+            await Clients.OthersInGroup(Helpers.ClientHandler.VIP_GROUP).RemovedFromVIPGroup(client);
         }
         public async void ClientIsTyping(string client, bool isTyping, bool isInVIPGroup)
         {

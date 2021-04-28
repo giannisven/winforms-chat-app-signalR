@@ -11,7 +11,6 @@ namespace ChatR.Interfaces
         Task IsTyping(string client, bool isTyping);
         Task AddedToVIPGroup(string client);
         Task RemovedFromVIPGroup(string client);
-        Task ClientJoined(int count);
-        Task ClientLeft(int count);
+        Task UpdateActiveClients(int count);
     }
 }

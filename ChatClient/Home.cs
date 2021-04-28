@@ -49,7 +49,7 @@ namespace ChatClient
 
             var newForm = new Form
             {
-                Size = new Size(750, 470),
+                Size = new Size(770, 470),
                 FormBorderStyle = FormBorderStyle.FixedSingle,
                 Text = clientName,
                 StartPosition = FormStartPosition.CenterParent

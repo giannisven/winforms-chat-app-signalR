@@ -59,18 +59,15 @@
   </resheader>
   <assembly alias="System.Drawing.Primitives" name="System.Drawing.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txt_Message.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>20, 60</value>
-  </data>
-  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
-  <data name="txt_Message.Multiline" type="System.Boolean, System.Private.CoreLib">
-    <value>True</value>
+    <value>10, 360</value>
   </data>
   <data name="txt_Message.PlaceholderText" xml:space="preserve">
     <value>Message</value>
   </data>
   <data name="txt_Message.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>250, 220</value>
+    <value>620, 27</value>
   </data>
+  <assembly alias="System.Private.CoreLib" name="System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
   <data name="txt_Message.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>1</value>
   </data>
@@ -86,48 +83,24 @@
   <data name="&gt;&gt;txt_Message.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="lbl_AddToVIP.AutoSize" type="System.Boolean, System.Private.CoreLib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-  <data name="lbl_AddToVIP.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Segoe UI, 10.2pt</value>
-  </data>
-  <data name="lbl_AddToVIP.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>17, 20</value>
-  </data>
-  <data name="lbl_AddToVIP.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>173, 23</value>
-  </data>
-  <data name="lbl_AddToVIP.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>2</value>
-  </data>
-  <data name="lbl_AddToVIP.Text" xml:space="preserve">
-    <value>Add me to VIP group</value>
-  </data>
-  <data name="&gt;&gt;lbl_AddToVIP.Name" xml:space="preserve">
-    <value>lbl_AddToVIP</value>
-  </data>
-  <data name="&gt;&gt;lbl_AddToVIP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_AddToVIP.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl_AddToVIP.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="cb_AddToVIP.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
   <data name="cb_AddToVIP.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>250, 25</value>
+    <value>10, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cb_AddToVIP.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
   <data name="cb_AddToVIP.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>18, 17</value>
+    <value>171, 24</value>
   </data>
   <data name="cb_AddToVIP.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>3</value>
+  </data>
+  <data name="cb_AddToVIP.Text" xml:space="preserve">
+    <value>Add me to VIP group</value>
   </data>
   <data name="&gt;&gt;cb_AddToVIP.Name" xml:space="preserve">
     <value>cb_AddToVIP</value>
@@ -139,13 +112,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_AddToVIP.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btn_SendMessage.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>20, 300</value>
+    <value>640, 355</value>
   </data>
   <data name="btn_SendMessage.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>250, 35</value>
+    <value>100, 35</value>
   </data>
   <data name="btn_SendMessage.TabIndex" type="System.Int32, System.Private.CoreLib">
     <value>4</value>
@@ -163,10 +136,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_SendMessage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btn_Connect.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>20, 350</value>
+    <value>530, 10</value>
   </data>
   <data name="btn_Connect.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>100, 35</value>
@@ -187,10 +160,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Connect.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btn_Disconnect.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>170, 350</value>
+    <value>640, 10</value>
   </data>
   <data name="btn_Disconnect.Size" type="System.Drawing.Size, System.Drawing.Primitives">
     <value>100, 35</value>
@@ -211,25 +184,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Disconnect.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lb_Messages.ItemHeight" type="System.Int32, System.Private.CoreLib">
+    <value>20</value>
+  </data>
+  <data name="lb_Messages.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>10, 55</value>
+  </data>
+  <data name="lb_Messages.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>730, 264</value>
+  </data>
+  <data name="lb_Messages.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lb_Messages.Name" xml:space="preserve">
+    <value>lb_Messages</value>
+  </data>
+  <data name="&gt;&gt;lb_Messages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lb_Messages.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lb_Messages.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="lbl_Events.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="lbl_Events.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Segoe UI Semibold, 10.2pt, style=Bold, Italic</value>
-  </data>
   <data name="lbl_Events.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>340, 360</value>
+    <value>10, 330</value>
   </data>
   <data name="lbl_Events.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>158, 23</value>
+    <value>0, 20</value>
   </data>
   <data name="lbl_Events.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>7</value>
-  </data>
-  <data name="lbl_Events.Text" xml:space="preserve">
-    <value>Waiting for event...</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;lbl_Events.Name" xml:space="preserve">
     <value>lbl_Events</value>
@@ -243,34 +234,31 @@
   <data name="&gt;&gt;lbl_Events.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbl_Messages.AutoSize" type="System.Boolean, System.Private.CoreLib">
+  <data name="lbl_ActiveClient.AutoSize" type="System.Boolean, System.Private.CoreLib">
     <value>True</value>
   </data>
-  <data name="lbl_Messages.Font" type="System.Drawing.Font, System.Drawing.Common">
-    <value>Segoe UI, 10.2pt</value>
+  <data name="lbl_ActiveClient.Location" type="System.Drawing.Point, System.Drawing.Primitives">
+    <value>630, 330</value>
   </data>
-  <data name="lbl_Messages.Location" type="System.Drawing.Point, System.Drawing.Primitives">
-    <value>340, 20</value>
+  <data name="lbl_ActiveClient.Size" type="System.Drawing.Size, System.Drawing.Primitives">
+    <value>111, 20</value>
   </data>
-  <data name="lbl_Messages.Size" type="System.Drawing.Size, System.Drawing.Primitives">
-    <value>144, 23</value>
+  <data name="lbl_ActiveClient.TabIndex" type="System.Int32, System.Private.CoreLib">
+    <value>9</value>
   </data>
-  <data name="lbl_Messages.TabIndex" type="System.Int32, System.Private.CoreLib">
-    <value>8</value>
+  <data name="lbl_ActiveClient.Text" xml:space="preserve">
+    <value>Active clients: 0</value>
   </data>
-  <data name="lbl_Messages.Text" xml:space="preserve">
-    <value>No messages yet!</value>
+  <data name="&gt;&gt;lbl_ActiveClient.Name" xml:space="preserve">
+    <value>lbl_ActiveClient</value>
   </data>
-  <data name="&gt;&gt;lbl_Messages.Name" xml:space="preserve">
-    <value>lbl_Messages</value>
-  </data>
-  <data name="&gt;&gt;lbl_Messages.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbl_ActiveClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=5.0.5.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Messages.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbl_ActiveClient.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbl_Messages.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbl_ActiveClient.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">

@@ -18,7 +18,6 @@ namespace ChatClient
             InitializeComponent();
             InitializeControl(name);
             SubscribeToEvents();
-            ListenToServer();
         }
 
         #region Locals
@@ -34,54 +33,57 @@ namespace ChatClient
 
         private async void OnConnectClick(object sender, EventArgs e)
         {
+            UpdateState(false);
+
+            _connection = new HubConnectionBuilder().WithUrl("https://localhost:44348/chatHub").Build();
+            ListenToServer();
+
+            Log(Color.Gray, "Staring connection...");
+
             try
             {
                 await _connection.StartAsync();
-                lbl_Events.Text = $"Connected!";
-
-                btn_SendMessage.Enabled = true;
-                btn_Disconnect.Enabled = true;
-                btn_Connect.Enabled = false;
-
-                txt_Message.TextChanged += OnMessageTextChanged;
-                cb_AddToVIP.CheckedChanged += OnCheckedChanged;
-            }
-            catch (System.Net.Http.HttpRequestException ex)
-            {
-                lbl_Events.Text = ex.Message;
             }
             catch (Exception ex)
             {
-                lbl_Events.Text = $"Connection failed. Exception: {ex.Message}";
+                Log(Color.Red, ex.Message);
             }
+
+            Log(Color.Gray, "Connection established.");
+            UpdateState(connected: true);
+            txt_Message.Focus();
         }
         private async void OnDisconnectClick(object sender, EventArgs e)
         {
-            await _connection.StopAsync();
-            lbl_Events.Text = "Disconnected!";
-            btn_SendMessage.Enabled = false;
-            btn_Disconnect.Enabled = false;
-            btn_Connect.Enabled = true;
+            Log(Color.Gray, "Stopping connection...");
 
-            txt_Message.TextChanged -= OnMessageTextChanged;
-            cb_AddToVIP.CheckedChanged -= OnCheckedChanged;
+            try
+            {
+                await _connection.StopAsync();
+            }
+            catch (Exception ex)
+            {
+                Log(Color.Red, ex.Message);
+            }
+
+            lb_Messages.Items.Clear();
+            Log(Color.Gray, "Connection terminated.");
+            UpdateActiveClients(0);
+            UpdateState(connected: false);
         }
         private async void OnSendMessageClick(object sender, EventArgs e)
         {
-            await _connection.InvokeAsync("SendMessage", txt_Message.Text, _name, _isVIP);
-
-            if (lbl_Messages.Text == "No messages yet!")
-                lbl_Messages.Text = string.Empty;
-
-            if (_isVIP)
+            try
             {
-                lbl_Messages.Text += $"I said to VIPs: {txt_Message.Text}{Environment.NewLine}";
+                await _connection.InvokeAsync("SendMessage", txt_Message.Text, _name, _isVIP);
             }
-            else
+            catch (Exception ex)
             {
-                lbl_Messages.Text += $"I said: {txt_Message.Text}{Environment.NewLine}";
+                Log(Color.Red, ex.Message);
             }
 
+            var txt = _isVIP ? "VIP" : "All";
+            Log(Color.CornflowerBlue, $"Me ({txt}): {txt_Message.Text}");
             txt_Message.Text = string.Empty;
         }
         private async void OnCheckedChanged(object sender, EventArgs e)
@@ -92,13 +94,14 @@ namespace ChatClient
             if (_isVIP)
             {
                 await _connection.InvokeAsync("AddToVIPGroup", _name);
-                lbl_Events.Text = "You entered the VIP group!";
             }
             else
             {
                 await _connection.InvokeAsync("RemoveFromVIPGroup", _name);
-                lbl_Events.Text = "You left the VIP group!";
             }
+
+            string value = _isVIP ? "enter" : "left";
+            Log(Color.Green, $"I {value} the VIP room!");
         }
         private async void OnMessageTextChanged(object sender, EventArgs e)
         {
@@ -110,6 +113,11 @@ namespace ChatClient
             _timer.Stop();
             await _connection.InvokeAsync("ClientIsTyping", _name, false, _isVIP);
         }
+        private void OnNewMessageLog(object sender, DrawItemEventArgs e)
+        {
+            var message = (LogMessage)lb_Messages.Items[e.Index];
+            e.Graphics.DrawString(message.Content, lb_Messages.Font, new SolidBrush(message.MessageColor), e.Bounds);
+        }
 
         #endregion
 
@@ -117,25 +125,39 @@ namespace ChatClient
 
         private void InitializeControl(string name)
         {
-            btn_Disconnect.Enabled = false;
-            btn_SendMessage.Enabled = false;
-
-            _connection = new HubConnectionBuilder().WithUrl("https://localhost:44348/chatHub").Build();
+            UpdateState(false);
             _timer = new Timer() { Interval = 1500 };
             _isVIP = false;
             _name = name;
         }
         private void SubscribeToEvents()
         {
-            btn_SendMessage.Click += OnSendMessageClick;
-            btn_Disconnect.Click += OnDisconnectClick;
-            _timer.Tick += OnIntervalTimeElapsed;
+            lb_Messages.DrawItem += OnNewMessageLog;
+            cb_AddToVIP.CheckedChanged += OnCheckedChanged;
             btn_Connect.Click += OnConnectClick;
+            btn_Disconnect.Click += OnDisconnectClick;
+            btn_SendMessage.Click += OnSendMessageClick;
+            txt_Message.TextChanged += OnMessageTextChanged;
+            _timer.Tick += OnIntervalTimeElapsed;
         }
+
+        private void UpdateState(bool connected)
+        {
+            btn_Disconnect.Enabled = connected;
+            btn_Connect.Enabled = !connected;
+            txt_Message.Enabled = connected;
+            btn_SendMessage.Enabled = connected;
+            cb_AddToVIP.Enabled = connected;
+            lb_Messages.Enabled = connected;
+        }
+        private void Log(Color color, string message)
+        {
+            lb_Messages.Items.Add(new LogMessage(color, message));
+        }
+
         private void ListenToServer()
         {
-            _connection.On<int>("ClientJoined", (c) => ClientJoined(c));
-            _connection.On<int>("ClientLeft", (c) => ClientLeft(c));
+            _connection.On<int>("UpdateActiveClients", (c) => UpdateActiveClients(c));
             _connection.On<string, string, bool>("BroadcastMessage", (c, m, v) => MessageReceived(m, c, v));
             _connection.On<string>("AddedToVIPGroup", (c) => AddedToVIPGroup(c));
             _connection.On<string>("RemovedFromVIPGroup", (c) => RemovedFromVIPGroup(c));
@@ -143,55 +165,41 @@ namespace ChatClient
             _connection.On("ClearMessages", () => ClearMessages());
             _connection.On("HelloFromServer", () => HelloFromServer());
         }
-        private void ClientJoined(int numberOfClients)
+
+        private void UpdateActiveClients(int numberOfClients)
         {
-            lbl_Events.Text = $"A new client entered the chat. Total clients: {numberOfClients}";
+            lbl_ActiveClient.Text = $"Active clients: {numberOfClients}";
         }
-        private void ClientLeft(int numberOfClients)
-        {
-            lbl_Events.Text = $"A client left the chat. Total clients: {numberOfClients}";
-        }
+
         private void MessageReceived(string message, string client, bool isVIPMessage)
         {
-            if (lbl_Messages.Text == "No messages yet!")
-                lbl_Messages.Text = string.Empty;
-
-            if (isVIPMessage)
-            {
-                lbl_Messages.Text += client + " says to VIPs: " + message + Environment.NewLine;
-            }
-            else
-            {
-                lbl_Messages.Text += client + " says: " + message + Environment.NewLine;
-            }
+            var txt = isVIPMessage ? "VIP" : "All";
+            Log(Color.Black, client + $" ({txt}): " + message);
         }
+
         private void AddedToVIPGroup(string client)
         {
-            lbl_Events.Text = $"{client} joins the VIP group!";
+            Log(Color.DarkGray, $"{client} joins the VIP room!");
         }
         private void RemovedFromVIPGroup(string client)
         {
-            lbl_Events.Text = $"{client} left the VIP group!";
+            Log(Color.DarkGray, $"{client} left the VIP room!");
         }
+
         private void ClientIsTyping(string client, bool isTyping)
         {
-            if (isTyping)
-                lbl_Events.Text = $"{client} is typing...";
-            else
-                lbl_Events.Text = string.Empty;
+            lbl_Events.Text = isTyping ? $"{client} is typing..." : string.Empty;
         }
+
         private void ClearMessages()
         {
-            lbl_Messages.Text = "Server commands to delete all the messages!";
+            Log(Color.DarkGray, "This is a message from the server!");
         }
         private void HelloFromServer()
         {
-            if (lbl_Messages.Text == "No messages yet!")
-                lbl_Messages.Text = string.Empty;
-
-            lbl_Messages.Text += "Server greets you!" + Environment.NewLine;
+            Log(Color.DarkGray, "Server message for VIPs only!");
         }
 
-        #endregion    
+        #endregion
     }
 }
