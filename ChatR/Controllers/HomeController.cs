@@ -37,15 +37,15 @@ namespace ChatR.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> Clear()
+        public async Task<IActionResult> GreetAll()
         {
-            await _hubContext.Clients.All.SendAsync("ClearMessages");
+            await _hubContext.Clients.All.SendAsync("GreetAll");
             return RedirectToRoute(new { action = "Index", controller = "Home", area = "" });
         }
 
         public async Task<IActionResult> GreetVIPs()
         {
-            await _hubContext.Clients.Group(Helpers.ClientHandler.VIP_GROUP).SendAsync("HelloFromServer");
+            await _hubContext.Clients.Group(Helpers.ClientHandler.VIP_GROUP).SendAsync("GreetVIPs");
             return RedirectToRoute(new { action = "Index", controller = "Home", area = "" });
         }
     }

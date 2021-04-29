@@ -32,6 +32,7 @@ namespace ChatClient
             this.btn_NewClient = new System.Windows.Forms.Button();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.lbl_Name = new System.Windows.Forms.Label();
+            this.btn_AutoCreateClients = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_NewClient
@@ -61,11 +62,21 @@ namespace ChatClient
             this.lbl_Name.TabIndex = 2;
             this.lbl_Name.Text = "Enter name";
             // 
+            // btn_AutoCreateClients
+            // 
+            this.btn_AutoCreateClients.Location = new System.Drawing.Point(100, 205);
+            this.btn_AutoCreateClients.Name = "btn_AutoCreateClients";
+            this.btn_AutoCreateClients.Size = new System.Drawing.Size(180, 29);
+            this.btn_AutoCreateClients.TabIndex = 3;
+            this.btn_AutoCreateClients.Text = "Auto create clients";
+            this.btn_AutoCreateClients.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 253);
+            this.Controls.Add(this.btn_AutoCreateClients);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.btn_NewClient);
@@ -84,6 +95,7 @@ namespace ChatClient
         private System.Windows.Forms.Button btn_NewClient;
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label lbl_Name;
+        private System.Windows.Forms.Button btn_AutoCreateClients;
     }
 }
 

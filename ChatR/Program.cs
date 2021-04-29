@@ -17,7 +17,6 @@ namespace ChatR
             var host = CreateHostBuilder(args).Build();
             host.Services.GetService(typeof(IHubContext<Hubs.ChatHub>));
             host.Run();
-
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

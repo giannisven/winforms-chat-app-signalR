@@ -162,8 +162,8 @@ namespace ChatClient
             _connection.On<string>("AddedToVIPGroup", (c) => AddedToVIPGroup(c));
             _connection.On<string>("RemovedFromVIPGroup", (c) => RemovedFromVIPGroup(c));
             _connection.On<string, bool>("IsTyping", (c, v) => ClientIsTyping(c, v));
-            _connection.On("ClearMessages", () => ClearMessages());
-            _connection.On("HelloFromServer", () => HelloFromServer());
+            _connection.On("GreetAll", () => GreetAll());
+            _connection.On("GreetVIPs", () => GreetVIPs());
         }
 
         private void UpdateActiveClients(int numberOfClients)
@@ -191,11 +191,11 @@ namespace ChatClient
             lbl_Events.Text = isTyping ? $"{client} is typing..." : string.Empty;
         }
 
-        private void ClearMessages()
+        private void GreetAll()
         {
-            Log(Color.DarkGray, "This is a message from the server!");
+            Log(Color.DarkGray, "Server message for all!");
         }
-        private void HelloFromServer()
+        private void GreetVIPs()
         {
             Log(Color.DarkGray, "Server message for VIPs only!");
         }

@@ -30,12 +30,10 @@ namespace ChatClient
             {
                 CreateNewClient();
             };
-
-            string[] defaultClients = new string[] { "Ioannis", "Dennis", "Theop" };
-            for(int i = 0; i <= 2; i++)
+            btn_AutoCreateClients.Click += (sender, args) => 
             {
-                CreateNewClient(defaultClients[i]);
-            }
+                AutoCreateClients();
+            };
         }
 
         #region Helpers
@@ -57,6 +55,14 @@ namespace ChatClient
             newForm.Controls.Add(new ChatRoom(clientName) { Dock = DockStyle.Fill });
             newForm.Show();
             txt_Name.Text = string.Empty;
+        }
+        private void AutoCreateClients()
+        {
+            string[] defaultClients = new string[] { "Ioannis", "Dennis", "Theop" };
+            for (int i = 0; i <= 2; i++)
+            {
+                CreateNewClient(defaultClients[i]);
+            }
         }
 
         #endregion
