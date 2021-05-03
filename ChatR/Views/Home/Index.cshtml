@@ -7,4 +7,9 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GreetAll">Greet All</a>
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GreetVIPs">Greet VIPs</a>
+    <form asp-controller="Home" asp-action="Post">
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send" />
+    </form>
+
 </div>

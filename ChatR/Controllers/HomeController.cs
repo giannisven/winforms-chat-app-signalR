@@ -1,6 +1,6 @@
 ﻿using ChatR.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -40,13 +40,20 @@ namespace ChatR.Controllers
         public async Task<IActionResult> GreetAll()
         {
             await _hubContext.Clients.All.SendAsync("GreetAll");
-            return RedirectToRoute(new { action = "Index", controller = "Home", area = "" });
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> GreetVIPs()
         {
             await _hubContext.Clients.Group(Helpers.ClientHandler.VIP_GROUP).SendAsync("GreetVIPs");
-            return RedirectToRoute(new { action = "Index", controller = "Home", area = "" });
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromForm] string message)
+        {
+            await _hubContext.Clients.Group(Helpers.ClientHandler.VIP_GROUP).SendAsync("BroadcastMessage", "Server", message, true); ;
+            return RedirectToAction("Index");
         }
     }
 }

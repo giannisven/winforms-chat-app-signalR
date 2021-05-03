@@ -58,10 +58,9 @@ namespace ChatClient
         }
         private void AutoCreateClients()
         {
-            string[] defaultClients = new string[] { "Ioannis", "Dennis", "Theop" };
-            for (int i = 0; i <= 2; i++)
+            foreach (var c in new string[] { "Ioannis", "Dennis", "Theop", "Konstantinos" })
             {
-                CreateNewClient(defaultClients[i]);
+                CreateNewClient(c);
             }
         }
 
